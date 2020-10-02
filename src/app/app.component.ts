@@ -1,4 +1,6 @@
+import { LoganService } from './logan.service';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'logan';
+  title: any;
+
+  constructor ( private router: Router, private loganServ: LoganService ) {
+
+  }
+
+  showName() {
+    this.loganServ.showMsg('Logan in Service');
+    // this.title = 'LOGAN'
+    this.router.navigate(['/home']);
+  }
 }
