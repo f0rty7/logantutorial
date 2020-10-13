@@ -10,4 +10,14 @@
   <a routerLink="/home">GO TO HOME</a>
 </div>
 
+<div>
+  <ul *ngFor="let item of apiData">
+    <li (click)="getName(item.name)">{{ item.name }}</li>
+  </ul>
+</div>
+
+<div>
+  <h1>My name is : {{ selectedName }}</h1>
+</div>
+
 <router-outlet></router-outlet>
